@@ -1,187 +1,411 @@
-// // // // what are variables and how many are they?
-// // // // tell the difference about them
-// // // // var/let - redeclared but not const
-// // // // var  can be reinitialized but not with const and let
-// // // // var/let can be declared without assigning a value, but not with const
-// // // // var supports hoisting but not with the const and let
+// // // // // what are variables and how many are they?
+// // // // // tell the difference about them
+// // // // // var/let - redeclared but not const
+// // // // // var  can be reinitialized but not with const and let
+// // // // // var/let can be declared without assigning a value, but not with const
+// // // // // var supports hoisting but not with the const and let
 
-// // // // console.log(simple());
+// // // // // console.log(simple());
 
-// // // // global scoped
-// // // // var a = 10;
-// // // // let b = 9;
-// // // // const c = 7;
+// // // // // global scoped
+// // // // // var a = 10;
+// // // // // let b = 9;
+// // // // // const c = 7;
 
-// // // // {
-// // // //     var d = 6;
-// // // //     let e = 5;
-// // // //     const f = 4;
-// // // //     console.log(a, b ,c, d, e, f, "block scoped")
-// // // //     //block scoped
+// // // // // {
+// // // // //     var d = 6;
+// // // // //     let e = 5;
+// // // // //     const f = 4;
+// // // // //     console.log(a, b ,c, d, e, f, "block scoped")
+// // // // //     //block scoped
+// // // // // }
+
+// // // // // function simple() {
+// // // // //     var g = 3;
+// // // // //     let h = 2;
+// // // // //     const i = 1;
+// // // // //     console.log(a, b, c, d, g, h, i, "function scoped");
+// // // // // //function scoped
+// // // // // }
+
+// // // // // // simple()
+// // // // // console.log(a, b, c, d,"global scoped");
+
+// // // // // data types: primitive and non-primitive
+
+// // // // // primitive = bool, string, number, undefined, null
+
+// // // // // non-primitive data types = function, arrays [], object {}
+
+// // // // // pass by value => primitive
+// // // // // pass by ref => non-primitive
+
+// // // // // let a = 10; // #$8FD6738#$
+// // // // // console.log(a);
+// // // // // a = 5 + 10
+// // // // // console.log(a);
+
+// // // // // let c = a;
+
+// // // // // let str = "hello"; //asd
+
+// // // // // function greet(str) {
+// // // // //     str[0] = 'k'
+// // // // //     console.log(str + " world", "fn");
+// // // // //     return
+// // // // // }
+
+// // // // // console.log(str);
+// // // // // greet(str);
+
+// // // // const arr = [1,2,3]; // q731238
+
+// // // // arr[2] = [1,2,45]; // 1298217319
+
+// // // // const obj = {
+// // // //     userName: "Harikalyan",
+// // // //     password: "123@kalyan"
 // // // // }
 
-// // // // function simple() {
-// // // //     var g = 3;
-// // // //     let h = 2;
-// // // //     const i = 1;
-// // // //     console.log(a, b, c, d, g, h, i, "function scoped");
-// // // // //function scoped
+// // // // obj.userName = "Balaji"
+
+// // // // // console.log(arr, obj);
+
+// // // // function morning() { // function declarion with no parameters
+// // // //     return "Good Morning";
 // // // // }
 
-// // // // // simple()
-// // // // console.log(a, b, c, d,"global scoped");
+// // // // function morning2(time) { // function declarion with parameters
+// // // //     return "Good " + time + " 2";
+// // // // }
+// // // // // morning(); // function call without args
+// // // // const res = morning2("morning");
 
-// // // // data types: primitive and non-primitive
+// // // // console.log(`${res} Harikalyan`) // good morning harikalyan
 
-// // // // primitive = bool, string, number, undefined, null
+// // // // // function call with args
 
-// // // // non-primitive data types = function, arrays [], object {}
+// // // // let str1 = "Hello";
+// // // // str1[0] = "l"
+// // // // // console.log(str1[0])
 
-// // // // pass by value => primitive
-// // // // pass by ref => non-primitive
-
-// // // // let a = 10; // #$8FD6738#$
-// // // // console.log(a);
-// // // // a = 5 + 10
-// // // // console.log(a);
-
-// // // // let c = a;
-
-// // // // let str = "hello"; //asd
-
-// // // // function greet(str) {
-// // // //     str[0] = 'k'
-// // // //     console.log(str + " world", "fn");
-// // // //     return
+// // // // const obj1 = {
+// // // //     "user-name": "Harikalyan",
+// // // //     password: "HARI@123"
 // // // // }
 
-// // // // console.log(str);
-// // // // greet(str);
+// // // // obj1["user-name"] = "balaji"
+// // // // console.log(obj1["user-name"])
 
-// // // const arr = [1,2,3]; // q731238
+// // // // console.log(obj1.password)
 
-// // // arr[2] = [1,2,45]; // 1298217319
+// // // // // function objFunction(obj) {
 
-// // // const obj = {
-// // //     userName: "Harikalyan",
-// // //     password: "123@kalyan"
-// // // }
+// // // // // }
 
-// // // obj.userName = "Balaji"
+// // // // // objFunction(obj1);
 
-// // // // console.log(arr, obj);
+// // // const data = [
+// // //   {
+// // //     1: "kalyan",
+// // //     "d-o-b": {
+// // //       month: "march",
+// // //       date: 16,
+// // //       year: 2000,
+// // //     },
+// // //   },
+// // //   {
+// // //     2: "hari",
+// // //     "d-o-b": {
+// // //       month: "june",
+// // //       date: 5,
+// // //       year: 2000,
+// // //     },
+// // //   },
+// // //   {
+// // //     1: "balaji",
+// // //     "d-o-b": {
+// // //       month: "july",
+// // //       date: 11,
+// // //       year: 2000,
+// // //     },
+// // //   },
+// // //   {
+// // //     1: "lakshmi",
+// // //     "d-o-b": {
+// // //       month: "august",
+// // //       date: 20,
+// // //       year: 2000,
+// // //     },
+// // //   },
+// // // ];
 
-// // // function morning() { // function declarion with no parameters
-// // //     return "Good Morning";
-// // // }
-
-// // // function morning2(time) { // function declarion with parameters
-// // //     return "Good " + time + " 2";
-// // // }
-// // // // morning(); // function call without args
-// // // const res = morning2("morning");
-
-// // // console.log(`${res} Harikalyan`) // good morning harikalyan
-
-// // // // function call with args
-
-// // // let str1 = "Hello";
-// // // str1[0] = "l"
-// // // // console.log(str1[0])
-
-// // // const obj1 = {
-// // //     "user-name": "Harikalyan",
-// // //     password: "HARI@123"
-// // // }
-
-// // // obj1["user-name"] = "balaji"
-// // // console.log(obj1["user-name"])
-
-// // // console.log(obj1.password)
-
-// // // // function objFunction(obj) {
-
+// // // // function peopleData (data) {
+// // // //     data
 // // // // }
 
-// // // // objFunction(obj1);
+// // // // console.log(peopleData(data));
 
-// // const data = [
-// //   {
-// //     1: "kalyan",
-// //     "d-o-b": {
-// //       month: "march",
+// // // // data.map((dataItem) => console.log(dataItem['d-o-b'].month))
+
+// // // // pass by value
+
+// // // let a = 10; // <x01x>
+// // // let b = "hello" // <x03x>
+
+// // // // pass by ref
+
+// // // let c = [1,2,3]; // <x04x>
+// // // // c[4] = "p" <x02x>
+// // // c[2] = true; // <x04x>
+
+// // // d = c; // [1,2,true] <x04x>
+
+// // // d = [4,5,6]; // overwrite // <x05x> // new ref
+
+// // // c = d; // if c is ref with d ref = 6 [ 4, 5, 6 ] [ 4, 5, 6 ]
+// // // // with no ref // true [ 1, 2, true ] [ 4, 5, 6 ]
+
+// // // console.log(c[2], c, d);
+
+// // // shallow copy vs deep copy
+
+// // let object1 = {
+// //   id: 1,
+
+// //   user: {
+// //     userName: "Harikalyan",
+// //     "D-O-B": {
+// //       year: 2000,
 // //       date: 16,
-// //       year: 2000,
+// //       month: "march",
 // //     },
+// //     email: "hari@gmail.com",
 // //   },
-// //   {
-// //     2: "hari",
-// //     "d-o-b": {
-// //       month: "june",
-// //       date: 5,
-// //       year: 2000,
-// //     },
-// //   },
-// //   {
-// //     1: "balaji",
-// //     "d-o-b": {
-// //       month: "july",
-// //       date: 11,
-// //       year: 2000,
-// //     },
-// //   },
-// //   {
-// //     1: "lakshmi",
-// //     "d-o-b": {
-// //       month: "august",
-// //       date: 20,
-// //       year: 2000,
-// //     },
-// //   },
-// // ];
+// // };
 
-// // // function peopleData (data) {
-// // //     data
-// // // }
 
-// // // console.log(peopleData(data));
 
-// // // data.map((dataItem) => console.log(dataItem['d-o-b'].month))
 
-// // // pass by value
 
-// // let a = 10; // <x01x>
-// // let b = "hello" // <x03x>
 
-// // // pass by ref
+// // let object2 = object1;
 
-// // let c = [1,2,3]; // <x04x>
-// // // c[4] = "p" <x02x>
-// // c[2] = true; // <x04x>
 
-// // d = c; // [1,2,true] <x04x>
 
-// // d = [4,5,6]; // overwrite // <x05x> // new ref
+// // object2.id = 3;
 
-// // c = d; // if c is ref with d ref = 6 [ 4, 5, 6 ] [ 4, 5, 6 ]
-// // // with no ref // true [ 1, 2, true ] [ 4, 5, 6 ]
+// // object1.user.userName = "Balaji";
 
-// // console.log(c[2], c, d);
 
-// // shallow copy vs deep copy
 
-// let object1 = {
-//   id: 1,
 
-//   user: {
-//     userName: "Harikalyan",
-//     "D-O-B": {
-//       year: 2000,
-//       date: 16,
-//       month: "march",
-//     },
-//     email: "hari@gmail.com",
-//   },
+// // let object3 = {...object2} // copy of object2 which eventually is a copy of object 1
+
+// // object3.id = 5;
+
+
+// // object3.user.userName = "Harikalyan Balaji";
+
+
+
+
+// // let object4 = JSON.parse(JSON.stringify(object1)); // {"id":3,"user":{"userName":"Harikalyan Balaji","D-O-B":{"year":2000,"date":16,"month":"march"},"email":"hari@gmail.com"}}
+
+// // object4.user["D-O-B"].date = 17;
+
+// // console.log(object1, "ref" , object2, "ref", object3, "copy", object4, "string data");
+
+
+
+// let inventory = [{"id":1,"car_make":"Lincoln","car_model":"Navigator","car_year":2009},
+// {"id":2,"car_make":"Mazda","car_model":"Miata MX-5","car_year":2001},
+// {"id":3,"car_make":"Land Rover","car_model":"Defender Ice Edition","car_year":2010},
+// {"id":4,"car_make":"Honda","car_model":"Accord","car_year":1983},
+// {"id":5,"car_make":"Mitsubishi","car_model":"Galant","car_year":1990},
+// {"id":6,"car_make":"Audi","car_model":"riolet","car_year":1995},
+// {"id":7,"car_make":"Smart","car_model":"Fortwo","car_year":2009},
+// {"id":8,"car_make":"Audi","car_model":"4000CS Quattro","car_year":1987},
+// {"id":9,"car_make":"Ford","car_model":"Windstar","car_year":1996},
+// {"id":10,"car_make":"Mercedes-Benz","car_model":"E-Class","car_year":2000},
+// {"id":11,"car_make":"Infiniti","car_model":"G35","car_year":2004},
+// {"id":12,"car_make":"Lotus","car_model":"Esprit","car_year":2004},
+// {"id":13,"car_make":"Chevrolet","car_model":"Cavalier","car_year":1997},
+// {"id":14,"car_make":"Dodge","car_model":"Ram Van 1500","car_year":1999},
+// {"id":15,"car_make":"Dodge","car_model":"Intrepid","car_year":2000},
+// {"id":16,"car_make":"Mitsubishi","car_model":"Montero Sport","car_year":2001},
+// {"id":17,"car_make":"Buick","car_model":"Skylark","car_year":1987},
+// {"id":18,"car_make":"Geo","car_model":"Prizm","car_year":1995},
+// {"id":19,"car_make":"Oldsmobile","car_model":"Bravada","car_year":1994},
+// {"id":20,"car_make":"Mazda","car_model":"Familia","car_year":1985},
+// {"id":21,"car_make":"Chevrolet","car_model":"Express 1500","car_year":2003},
+// {"id":22,"car_make":"Jeep","car_model":"Wrangler","car_year":1997},
+// {"id":23,"car_make":"Eagle","car_model":"Talon","car_year":1992},
+// {"id":24,"car_make":"Toyota","car_model":"MR2","car_year":2003},
+// {"id":25,"car_make":"BMW","car_model":"525","car_year":2005},
+// {"id":26,"car_make":"Cadillac","car_model":"Escalade","car_year":2005},
+// {"id":27,"car_make":"Infiniti","car_model":"Q","car_year":2000},
+// {"id":28,"car_make":"Suzuki","car_model":"Aerio","car_year":2005},
+// {"id":29,"car_make":"Mercury","car_model":"Topaz","car_year":1993},
+// {"id":30,"car_make":"BMW","car_model":"6 Series","car_year":2010},
+// {"id":31,"car_make":"Pontiac","car_model":"GTO","car_year":1964},
+// {"id":32,"car_make":"Dodge","car_model":"Ram Van 3500","car_year":1999},
+// {"id":33,"car_make":"Jeep","car_model":"Wrangler","car_year":2011},
+// {"id":34,"car_make":"Ford","car_model":"Escort","car_year":1991},
+// {"id":35,"car_make":"Chrysler","car_model":"300M","car_year":2000},
+// {"id":36,"car_make":"Volvo","car_model":"XC70","car_year":2003},
+// {"id":37,"car_make":"Oldsmobile","car_model":"LSS","car_year":1997},
+// {"id":38,"car_make":"Toyota","car_model":"Camry","car_year":1992},
+// {"id":39,"car_make":"Ford","car_model":"Econoline E250","car_year":1998},
+// {"id":40,"car_make":"Lotus","car_model":"Evora","car_year":2012},
+// {"id":41,"car_make":"Ford","car_model":"Mustang","car_year":1965},
+// {"id":42,"car_make":"GMC","car_model":"Yukon","car_year":1996},
+// {"id":43,"car_make":"Mercedes-Benz","car_model":"R-Class","car_year":2009},
+// {"id":44,"car_make":"Audi","car_model":"Q7","car_year":2012},
+// {"id":45,"car_make":"Audi","car_model":"TT","car_year":2008},
+// {"id":46,"car_make":"Oldsmobile","car_model":"Ciera","car_year":1995},
+// {"id":47,"car_make":"Volkswagen","car_model":"Jetta","car_year":2007},
+// {"id":48,"car_make":"Dodge","car_model":"Magnum","car_year":2008},
+// {"id":49,"car_make":"Chrysler","car_model":"Sebring","car_year":1996},
+// {"id":50,"car_make":"Lincoln","car_model":"Town Car","car_year":1999}];
+
+
+
+
+
+// // ==== Problem #1 ====
+// // The dealer can't recall the information for a car with an id of 33 on his lot. Help the dealer find out which car has an id of 33 by calling a function that will return the data for that car. Then log the car's year, make, and model in the console log in the format of:
+// "Car 33 is a *car year goes here* *car make goes here* *car model goes here*"
+
+// // ==== Problem #2 ====
+// // The dealer needs the information on the last car in their inventory. Execute a function to find what the make and model of the last car in the inventory is?  Log the make and model into the console in the format of:
+// "Last car is a *car make goes here* *car model goes here*"
+
+// // ==== Problem #3 ====
+// // The marketing team wants the car models listed alphabetically on the website. Execute a function to Sort all the car model names into alphabetical order and log the results in the console as it was returned.
+
+// // ==== Problem #4 ====
+// // The accounting team needs all the years from every car on the lot. Execute a function that will return an array from the dealer data containing only the car years and log the result in the console as it was returned.
+
+// // ==== Problem #5 ====
+// // The car lot manager needs to find out how many cars are older than the year 2000. Using the array you just obtained from the previous problem, find out how many cars were made before the year 2000 and return the array of older cars and log its length.
+
+// // ==== Problem #6 ====
+// // A buyer is interested in seeing only BMW and Audi cars within the inventory.  Execute a function and return an array that only contains BMW and Audi cars.  Once you have the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
+
+
+
+
+// // console.log(inventory);
+
+
+
+// const help = inventory.reduce((acc, currentValue) => {
+//   currentValue?.car_make === "BMW" ? acc.push({...currentValue, myId: Math.random().toFixed(2)}) : null
+//   return acc
+// }, [])
+
+
+// console.log(help)
+
+
+
+
+
+// shallow copy vs deep copy
+
+let obj = {
+  fullName: "Harikalyan",
+  age: 25,
+  male: true,
+  "D_O_B": {
+    month: "March",
+    date: "16th",
+    birth_year: 2000,
+    day: {
+      day_i_was_born: "thursday",
+      time: {
+        hours: "10",
+        min: "2",
+        sec: "50s"
+      }
+    }
+  }
+}
+
+
+obj["D_O_B"].day.day_i_was_born = "sunday";
+
+// console.log(obj, "before obj changes");
+
+let obj1 = obj;
+
+
+obj1["D_O_B"].day.day_i_was_born = "thursday";
+
+
+// console.log(obj1, "after obj1 changes");
+
+
+// console.log(obj, obj1)
+
+// shallow copy
+
+// obj => {...obj,  } => {}
+
+
+let  shallowCopy = {...obj}; //spread operator
+
+console.log(shallowCopy, obj);
+
+console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+shallowCopy.age = 30;
+
+
+console.log(shallowCopy, obj);
+console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+
+shallowCopy["D_O_B"].date = "17th"
+
+
+console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+console.log(shallowCopy, obj)
+
+console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+// let deepCopy = JSON.stringify(obj);
+// deepCopy = JSON.parse(deepCopy);
+
+let deepCopy = structuredClone(obj);
+
+
+deepCopy["D_O_B"].date = "20TH"
+console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+console.log(deepCopy, obj);
+
+
+function myStructuredClone (obj){
+  if(obj !== "string"){
+    return JSON.parse(JSON.stringify(obj))
+  }
+
+  return null
+};
+
+
+
+
+
+// const myStructuredClone = obj => {
+//   if(obj !== "string"){
+//     return JSON.parse(JSON.stringify(obj))
+//   }
+
+//   return null
 // };
 
 
@@ -189,122 +413,12 @@
 
 
 
-// let object2 = object1;
-
-
-
-// object2.id = 3;
-
-// object1.user.userName = "Balaji";
-
-
-
-
-// let object3 = {...object2} // copy of object2 which eventually is a copy of object 1
-
-// object3.id = 5;
-
-
-// object3.user.userName = "Harikalyan Balaji";
-
-
-
-
-// let object4 = JSON.parse(JSON.stringify(object1)); // {"id":3,"user":{"userName":"Harikalyan Balaji","D-O-B":{"year":2000,"date":16,"month":"march"},"email":"hari@gmail.com"}}
-
-// object4.user["D-O-B"].date = 17;
-
-// console.log(object1, "ref" , object2, "ref", object3, "copy", object4, "string data");
-
-
-
-let inventory = [{"id":1,"car_make":"Lincoln","car_model":"Navigator","car_year":2009},
-{"id":2,"car_make":"Mazda","car_model":"Miata MX-5","car_year":2001},
-{"id":3,"car_make":"Land Rover","car_model":"Defender Ice Edition","car_year":2010},
-{"id":4,"car_make":"Honda","car_model":"Accord","car_year":1983},
-{"id":5,"car_make":"Mitsubishi","car_model":"Galant","car_year":1990},
-{"id":6,"car_make":"Audi","car_model":"riolet","car_year":1995},
-{"id":7,"car_make":"Smart","car_model":"Fortwo","car_year":2009},
-{"id":8,"car_make":"Audi","car_model":"4000CS Quattro","car_year":1987},
-{"id":9,"car_make":"Ford","car_model":"Windstar","car_year":1996},
-{"id":10,"car_make":"Mercedes-Benz","car_model":"E-Class","car_year":2000},
-{"id":11,"car_make":"Infiniti","car_model":"G35","car_year":2004},
-{"id":12,"car_make":"Lotus","car_model":"Esprit","car_year":2004},
-{"id":13,"car_make":"Chevrolet","car_model":"Cavalier","car_year":1997},
-{"id":14,"car_make":"Dodge","car_model":"Ram Van 1500","car_year":1999},
-{"id":15,"car_make":"Dodge","car_model":"Intrepid","car_year":2000},
-{"id":16,"car_make":"Mitsubishi","car_model":"Montero Sport","car_year":2001},
-{"id":17,"car_make":"Buick","car_model":"Skylark","car_year":1987},
-{"id":18,"car_make":"Geo","car_model":"Prizm","car_year":1995},
-{"id":19,"car_make":"Oldsmobile","car_model":"Bravada","car_year":1994},
-{"id":20,"car_make":"Mazda","car_model":"Familia","car_year":1985},
-{"id":21,"car_make":"Chevrolet","car_model":"Express 1500","car_year":2003},
-{"id":22,"car_make":"Jeep","car_model":"Wrangler","car_year":1997},
-{"id":23,"car_make":"Eagle","car_model":"Talon","car_year":1992},
-{"id":24,"car_make":"Toyota","car_model":"MR2","car_year":2003},
-{"id":25,"car_make":"BMW","car_model":"525","car_year":2005},
-{"id":26,"car_make":"Cadillac","car_model":"Escalade","car_year":2005},
-{"id":27,"car_make":"Infiniti","car_model":"Q","car_year":2000},
-{"id":28,"car_make":"Suzuki","car_model":"Aerio","car_year":2005},
-{"id":29,"car_make":"Mercury","car_model":"Topaz","car_year":1993},
-{"id":30,"car_make":"BMW","car_model":"6 Series","car_year":2010},
-{"id":31,"car_make":"Pontiac","car_model":"GTO","car_year":1964},
-{"id":32,"car_make":"Dodge","car_model":"Ram Van 3500","car_year":1999},
-{"id":33,"car_make":"Jeep","car_model":"Wrangler","car_year":2011},
-{"id":34,"car_make":"Ford","car_model":"Escort","car_year":1991},
-{"id":35,"car_make":"Chrysler","car_model":"300M","car_year":2000},
-{"id":36,"car_make":"Volvo","car_model":"XC70","car_year":2003},
-{"id":37,"car_make":"Oldsmobile","car_model":"LSS","car_year":1997},
-{"id":38,"car_make":"Toyota","car_model":"Camry","car_year":1992},
-{"id":39,"car_make":"Ford","car_model":"Econoline E250","car_year":1998},
-{"id":40,"car_make":"Lotus","car_model":"Evora","car_year":2012},
-{"id":41,"car_make":"Ford","car_model":"Mustang","car_year":1965},
-{"id":42,"car_make":"GMC","car_model":"Yukon","car_year":1996},
-{"id":43,"car_make":"Mercedes-Benz","car_model":"R-Class","car_year":2009},
-{"id":44,"car_make":"Audi","car_model":"Q7","car_year":2012},
-{"id":45,"car_make":"Audi","car_model":"TT","car_year":2008},
-{"id":46,"car_make":"Oldsmobile","car_model":"Ciera","car_year":1995},
-{"id":47,"car_make":"Volkswagen","car_model":"Jetta","car_year":2007},
-{"id":48,"car_make":"Dodge","car_model":"Magnum","car_year":2008},
-{"id":49,"car_make":"Chrysler","car_model":"Sebring","car_year":1996},
-{"id":50,"car_make":"Lincoln","car_model":"Town Car","car_year":1999}];
 
 
 
 
 
-// ==== Problem #1 ====
-// The dealer can't recall the information for a car with an id of 33 on his lot. Help the dealer find out which car has an id of 33 by calling a function that will return the data for that car. Then log the car's year, make, and model in the console log in the format of:
-"Car 33 is a *car year goes here* *car make goes here* *car model goes here*"
-
-// ==== Problem #2 ====
-// The dealer needs the information on the last car in their inventory. Execute a function to find what the make and model of the last car in the inventory is?  Log the make and model into the console in the format of:
-"Last car is a *car make goes here* *car model goes here*"
-
-// ==== Problem #3 ====
-// The marketing team wants the car models listed alphabetically on the website. Execute a function to Sort all the car model names into alphabetical order and log the results in the console as it was returned.
-
-// ==== Problem #4 ====
-// The accounting team needs all the years from every car on the lot. Execute a function that will return an array from the dealer data containing only the car years and log the result in the console as it was returned.
-
-// ==== Problem #5 ====
-// The car lot manager needs to find out how many cars are older than the year 2000. Using the array you just obtained from the previous problem, find out how many cars were made before the year 2000 and return the array of older cars and log its length.
-
-// ==== Problem #6 ====
-// A buyer is interested in seeing only BMW and Audi cars within the inventory.  Execute a function and return an array that only contains BMW and Audi cars.  Once you have the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
 
 
 
-
-// console.log(inventory);
-
-
-
-const help = inventory.reduce((acc, currentValue) => {
-  currentValue?.car_make === "BMW" ? acc.push({...currentValue, myId: Math.random().toFixed(2)}) : null
-  return acc
-}, [])
-
-
-console.log(help)
 

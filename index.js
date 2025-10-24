@@ -508,25 +508,102 @@
 
 
 
-let arr = [1,2,3,4,"hello", true, [1,2,3]];
+// let arr = [1,2,3,4,"hello", true, [1,2,3]];
 
-let arrInstance = arr;
+// let arrInstance = arr;
 
-arrInstance[4] = "Good Morning"
-
-
-let arrCopy = [...arr];
-
-arrCopy[6][2] = 4
-
-console.log(arr, arrInstance, arrCopy);
+// arrInstance[4] = "Good Morning"
 
 
+// let arrCopy = [...arr];
+
+// arrCopy[6][2] = 4
+
+// console.log(arr, arrInstance, arrCopy);
+
+
+// parameterized functions => different types of parameters
+// and how does it work for non-params => steps to take care of the fallback or default value 
+
+// function identifyParam(obj) {
+//     const objCopy = {...obj, log: "Hello I am here to tell you good morning"}
+//     return {...obj ,log: objCopy.log};
+// }
+
+// let obj = identifyParam({greet: "Good morning"})
+
+// console.log(identifyParam(obj))
+
+// console.log(obj);
 
 
 
+// function identifyParam(params) { //prams
+//     return params
+// }
+
+// console.log(identifyParam({greet: "Good morning"})) // args
+
+// const data = [{h: 1}, {i: 2}, {j: 3}];
+// const data2 = {...data}
+// const data3 = [...data]
+
+// console.log(data, data2, data3)
+
+// truthy falsy 
+
+// function greetMessage(message) {
+//     if("1" == true) return `Good ${message}!`; //string literals
+//     else return "No message"
+//     // return "Good " + message + "!";
+// }
+
+// console.log(greetMessage("Night")) //input
+// console.log(greetMessage("MOrning")) //input
+// console.log(greetMessage("evening")) //input
+// console.log(greetMessage("")) //input
 
 
+
+//     let matrix = [
+//         [1,2,3],
+//          [2,3,4],
+//           [5,6,7]
+//     ]
+
+// const arr = [1,2,3]
+//     console.log(arr[0])
+
+//     console.log(matrix[2][2])
+
+// callbacks => 
+
+// function greet(){
+    
+// }
+
+// const arr = [[1,2,3], {hello: "good morning"}, greet]
+
+
+
+const obj = {
+    good: "hello",
+    morning: "world"
+}
+
+
+function readObj(obj){
+    const {good, morning: newMoring} = obj; //object destructuring
+    const [first, last, hello] = ["Gokul", "Gurumurthy", newMoring] // array desctructring
+    // const first = "Gokul"
+    // const hello = "world"
+    // return {good, morning}
+    return hello
+    // console.log(morning)
+}
+
+
+console.log(readObj(obj))
 
 
 
